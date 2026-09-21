@@ -1,70 +1,77 @@
-# Resume AI Tailor
+# CareerResume
 
-Local MVP web app for tailoring a master DOCX resume to a pasted job description.
+CareerResume is an AI-powered resume optimization application designed to help candidates tailor an existing resume to a specific job description while preserving the accuracy of their original experience, skills, education, and professional background.
 
-## Features
+I built CareerResume to make resume tailoring more efficient without changing the candidate's actual qualifications or introducing skills and experience that are not already supported by the original resume.
 
-- Upload master resume DOCX
-- Paste company name and job description
-- AI detects job title automatically
-- Calculates original and updated match scores
-- Generates DOCX and PDF downloads
-- Supports Grok/xAI or OpenAI from `.env`
+The application focuses on improving how relevant experience is presented for a particular role.
 
-## Run backend
+---
 
-```bash
-cd backend
-npm install
-copy .env.example .env
-npm run dev
-```
+## Why I Built CareerResume
 
-On Mac/Linux, use:
+Job descriptions often describe similar responsibilities using different terminology.
 
-```bash
-cp .env.example .env
-```
+A candidate may already have the required experience, but that experience may not be clearly emphasized in the resume for a specific position.
 
-## Use Grok / xAI
+Manually reviewing every job description and adjusting a resume can become repetitive and time-consuming.
 
-Open `backend/.env` and use:
+CareerResume was created to simplify that process.
 
-```env
-AI_PROVIDER=grok
-PORT=5000
-XAI_API_KEY=your_xai_key_here
-XAI_MODEL=grok-4.3
-XAI_BASE_URL=
-```
+Instead of creating an entirely new resume, the application works with the candidate's existing resume and helps improve its alignment with the selected job description.
 
-## Use OpenAI instead
+---
 
-Open `backend/.env` and use:
+## What CareerResume Does
 
-```env
-AI_PROVIDER=openai
-PORT=5000
-OPENAI_API_KEY=your_openai_key_here
-OPENAI_MODEL=gpt-5.5-mini
-```
+CareerResume compares an existing resume with a job description and identifies areas where the resume can be presented more effectively for that particular role.
 
-## Run frontend
+The application can help with:
 
-Open a second terminal:
+- Job-description analysis
+- Resume-to-job comparison
+- Relevant skill identification
+- Keyword alignment
+- Experience prioritization
+- Resume content optimization
+- ATS-focused analysis
+- Structured AI output
+- Resume formatting
+- Document generation
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+CareerResume does not intentionally create qualifications that are not supported by the original resume.
 
-Then open:
+The goal is to improve the presentation of existing experience, not replace or fabricate it.
+
+---
+
+## Core Principle
+
+> **Improve the presentation of the experience without changing the truth behind it.**
+
+CareerResume is designed around the idea that resume tailoring should improve relevance while maintaining professional accuracy.
+
+If a technology, responsibility, qualification, or experience is not supported by the candidate's existing background, the application should not present it as completed experience.
+
+---
+
+## How It Works
+
+The basic workflow is:
 
 ```text
-http://localhost:5173
-```
-
-## Notes
-
-For best formatting, upload a DOCX resume. PDF should be treated as final output, not the editable master template.
+Existing Resume
+      +
+Job Description
+      ↓
+Resume & Job Analysis
+      ↓
+Relevant Requirement Identification
+      ↓
+Experience and Skill Alignment
+      ↓
+Content Optimization
+      ↓
+Structured Resume Output
+      ↓
+Generated Resume
